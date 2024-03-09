@@ -3,9 +3,10 @@
 1. **[Problème de Connexion avec un Appareil Bluetooth](#problème-de-connexion-avec-un-appareil-bluetooth)**
 2. **[Discord Demande une Mise à Jour non Disponible dans le Répertoire](#discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire)**
 
+---
 
 <a name="problème-de-connexion-avec-un-appareil-bluetooth"></a>
-### Problème de Connexion avec un Appareil Bluetooth
+## Problème de Connexion avec un Appareil Bluetooth
 
 Si vous rencontrez des problèmes de connexion avec un appareil Bluetooth, essayez la manipulation suivante :
 
@@ -14,6 +15,8 @@ sudo nano /etc/bluetooth/main.conf
 ```
 
 Modifiez la ligne `#ControllerMode = dual` en `ControllerMode = bredr` puis redémarrez.
+
+---
 
 <a name="discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire"></a>
 ## Discord Demande une Mise à Jour non Disponible dans le Répertoire
