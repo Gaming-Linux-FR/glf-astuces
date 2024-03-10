@@ -65,27 +65,25 @@ Le multiboot est un moyen de démarrer plusieurs systèmes d'exploitation sur un
    sudo nano /etc/default/grub
    ```
 
-   Recherchez la ligne contenant `# GRUB_DISABLE_OS_PROBER=false` et supprimez le caractère `#` au début de la ligne pour activer la détection automatique d'autres systèmes d'exploitation.
+Recherchez la ligne contenant `# GRUB_DISABLE_OS_PROBER=false` et supprimez le caractère `#` au début de la ligne pour activer la détection automatique d'autres systèmes d'exploitation.
+
+Si vous voulez également que votre grub mémorise le dernier OS lancé, remplacez la ligne `GRUB_DEFAULT=0` par `GRUB_DEFAULT=saved` et ajoutez `GRUB_SAVEDEFAULT="true"`
 
    Enregistrez les modifications et quittez l'éditeur de texte.
 
-2. **Installer `os-prober`** :
+3. **Installer `os-prober`** :
 
    Utilisez votre gestionnaire de paquets pour installer `os-prober`, un utilitaire qui permet à GRUB de détecter d'autres systèmes d'exploitation :
    ```bash
    sudo pacman -S os-prober
    ```
 
-3. **Exécuter `os-prober`** :
+4. **Exécuter `os-prober`** :
 
    Exécutez `os-prober` pour rechercher d'autres systèmes d'exploitation installés sur votre ordinateur :
    ```bash
    sudo os-prober
    ```
-
-4. **mémoriser le dernier kernel ou os utilisé**
-
-Remplacez la ligne `GRUB_DEFAULT=0` par `GRUB_DEFAULT=saved` et ajoutez `GRUB_SAVEDEFAULT="true"`
 
 5. **Générer la Configuration de GRUB** :
 
