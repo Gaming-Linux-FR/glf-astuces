@@ -2,6 +2,7 @@
 
 1. **[Problème de Connexion avec un Appareil Bluetooth](#problème-de-connexion-avec-un-appareil-bluetooth)**
 2. **[Discord Demande une Mise à Jour non Disponible dans le Répertoire](#discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire)**
+3. **[Configuration du Multiboot avec grub](#nonfiguration-du-multiboot-avec-grub)**
 
 ---
 
@@ -48,3 +49,47 @@ Notez que vous devrez ajouter une virgule supplémentaire après l'objet `WINDOW
   "SKIP_HOST_UPDATE": true
 }
 ```
+
+---
+
+## Configuration du Multiboot avec grub
+
+#### Introduction
+
+Le multiboot est un moyen de démarrer plusieurs systèmes d'exploitation sur un même ordinateur. Dans ce tutoriel, nous allons utiliser GRUB, le gestionnaire de démarrage standard pour de nombreuses distributions Linux, pour configurer un multiboot.
+
+1. **Modifier la Configuration de GRUB** :
+
+   Ouvrez un terminal et exécutez la commande suivante pour ouvrir le fichier de configuration de GRUB :
+   ```bash
+   sudo nano /etc/default/grub
+   ```
+
+   Recherchez la ligne contenant `# GRUB_DISABLE_OS_PROBER=false` et supprimez le caractère `#` au début de la ligne pour activer la détection automatique d'autres systèmes d'exploitation.
+
+   Enregistrez les modifications et quittez l'éditeur de texte.
+
+2. **Installer `os-prober`** :
+
+   Utilisez votre gestionnaire de paquets pour installer `os-prober`, un utilitaire qui permet à GRUB de détecter d'autres systèmes d'exploitation :
+   ```bash
+   sudo pacman -S os-prober
+   ```
+
+3. **Exécuter `os-prober`** :
+
+   Exécutez `os-prober` pour rechercher d'autres systèmes d'exploitation installés sur votre ordinateur :
+   ```bash
+   sudo os-prober
+   ```
+
+4. **mémoriser le dernier kernel ou os utilisé**
+
+Remplacez la ligne `GRUB_DEFAULT=0` par `GRUB_DEFAULT=saved` et ajoutez `GRUB_SAVEDEFAULT="true"`
+
+5. **Générer la Configuration de GRUB** :
+
+   Utilisez la commande suivante pour générer la configuration de GRUB basée sur les résultats de `os-prober` :
+   ```bash
+   sudo grub-mkconfig -o /boot/grub/grub.cfg
+   ```
