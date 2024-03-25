@@ -2,7 +2,8 @@
 
 1. **[Problème de Connexion avec un Appareil Bluetooth](#problème-de-connexion-avec-un-appareil-bluetooth)**
 2. **[Discord Demande une Mise à Jour non Disponible dans le Répertoire](#discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire)**
-3. **[Configuration du Multiboot avec grub](#nonfiguration-du-multiboot-avec-grub)**
+3. **[Configuration du Multiboot avec grub](#configuration-du-multiboot-avec-grub)**
+4. **[Accès à un second disque sur Steam **FLATPAK**](#accès-à-un-second-disque-sur-steam-flatpak)**
 
 ---
 
@@ -91,3 +92,13 @@ Si vous voulez également que votre grub mémorise le dernier OS lancé, remplac
    ```bash
    sudo grub-mkconfig -o /boot/grub/grub.cfg
    ```
+
+## Accès à un second disque sur Steam **FLATPAK**
+
+Si vous souhaitez ajouter un second disque dur ou SSD pour votre bibliothèque de jeux Steam, vous devez accorder à Steam l'accès à ce disque via une commande Flatpak :
+              
+```bash
+flatpak override --user --filesystem=/chemin/vers/votre/Bibliothèque/Steam com.valvesoftware.Steam
+```
+   
+Remplacez `/chemin/vers/votre/Bibliothèque/Steam` par le chemin réel vers votre dossier de bibliothèque Steam sur le second disque.
