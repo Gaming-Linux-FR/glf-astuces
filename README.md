@@ -93,6 +93,8 @@ Si vous voulez également que votre grub mémorise le dernier OS lancé, remplac
    sudo grub-mkconfig -o /boot/grub/grub.cfg
    ```
 
+---
+
 ## Accès à un second disque sur Steam **FLATPAK**
 
 Si vous souhaitez ajouter un second disque dur ou SSD pour votre bibliothèque de jeux Steam, vous devez accorder à Steam l'accès à ce disque via une commande Flatpak :
