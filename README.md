@@ -102,3 +102,5 @@ flatpak override --user --filesystem=/chemin/vers/votre/Bibliothèque/Steam com.
 ```
    
 Remplacez `/chemin/vers/votre/Bibliothèque/Steam` par le chemin réel vers votre dossier de bibliothèque Steam sur le second disque.
+
+Il faudra relancer Steam Flatpak pour qu'il puisse détecter le nouveau disque. Si il ne le détecte pas, c'est que vous vous êtes trompé dans la commande.
