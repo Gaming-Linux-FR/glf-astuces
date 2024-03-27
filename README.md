@@ -4,6 +4,7 @@
 2. **[Discord Demande une Mise à Jour non Disponible dans le Répertoire](#discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire)**
 3. **[Configuration du Multiboot avec grub](#configuration-du-multiboot-avec-grub)**
 4. **[Accès à un second disque sur Steam **FLATPAK**](#accès-à-un-second-disque-sur-steam-flatpak)**
+5. **[Comment créer une clé bootable depuis Windows](#comment-créer-une-clé-bootable-depuis-windows)**
 
 ---
 
@@ -106,3 +107,9 @@ flatpak override --user --filesystem=/chemin/vers/votre/Bibliothèque/Steam com.
 Remplacez `/chemin/vers/votre/Bibliothèque/Steam` par le chemin réel vers votre dossier de bibliothèque Steam sur le second disque.
 
 Il faudra relancer Steam Flatpak pour qu'il puisse détecter le nouveau disque. Si il ne le détecte pas, c'est que vous vous êtes trompé dans la commande.
+
+---
+
+## Comment créer une clé bootable depuis Windows
+
+Tuto côté Emmabuntüs : https://emmabuntus.org/installer-emmabuntus-de5/#Avec_loutil_Etcher
