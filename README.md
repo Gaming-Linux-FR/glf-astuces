@@ -24,7 +24,7 @@ Modifiez la ligne `#ControllerMode = dual` en `ControllerMode = bredr` puis red�
 <a name="discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire"></a>
 ## Discord Demande une Mise à Jour non Disponible dans le Répertoire
 
-Discord refusera de se lancer s'il détecte qu'une mise à jour est disponible, affichant le message suivant : "Must be your lucky day, there's a new update !" (C'est votre jour de chance, une nouvelle mise à jour est disponible !). Si la version mise à jour n'est pas encore disponible dans les répertoires officiels de votre distribusion vous pouvez soit utiliser les flatpak, soit désactiver la vérification de mise à jour.
+Discord refusera de se lancer s'il détecte qu'une mise à jour est disponible, affichant le message suivant : "Must be your lucky day, there's a new update !" (C'est votre jour de chance, une nouvelle mise à jour est disponible !). Si la version mise à jour n'est pas encore disponible dans les répertoires officiels de votre distribution vous pouvez soit utiliser les flatpak, soit désactiver la vérification de mise à jour.
 
 Pour désactiver la vérification de mise à jour, ajoutez la ligne suivante à `~/.config/discord/settings.json` :
 
@@ -58,7 +58,7 @@ Notez que vous devrez ajouter une virgule supplémentaire après l'objet `WINDOW
 
 #### Introduction
 
-Le multiboot est un moyen de démarrer plusieurs systèmes d'exploitation sur un même ordinateur. Dans ce tutoriel, nous allons utiliser GRUB, le gestionnaire de démarrage standard pour de nombreuses distribusions Linux, pour configurer un multiboot.
+Le multiboot est un moyen de démarrer plusieurs systèmes d'exploitation sur un même ordinateur. Dans ce tutoriel, nous allons utiliser GRUB, le gestionnaire de démarrage standard pour de nombreuses distributions Linux, pour configurer un multiboot.
 
 1. **Modifier la Configuration de GRUB** :
 
