@@ -3,7 +3,7 @@
 1. **[Problème de Connexion avec un Appareil Bluetooth](#problème-de-connexion-avec-un-appareil-bluetooth)**
 2. **[Discord Demande une Mise à Jour non Disponible dans le Répertoire](#discord-demande-une-mise-à-jour-non-disponible-dans-le-répertoire)**
 3. **[Configuration du Multiboot avec grub](#configuration-du-multiboot-avec-grub)**
-4. **[Accès à un second disque sur Steam **FLATPAK**](#accès-à-un-second-disque-sur-steam-flatpak)**
+4. **[Accèder à un disque secondaire avec une application **FLATPAK**](#accèder-à-un-disque-secondaire-avec-une-application-flatpak)**
 5. **[Comment créer une clé bootable depuis Windows](#comment-créer-une-clé-bootable-depuis-windows)**
 
 ---
@@ -96,17 +96,11 @@ Si vous voulez également que votre grub mémorise le dernier OS lancé, remplac
 
 ---
 
-## Accès à un second disque sur Steam **FLATPAK**
+## Accèder à un disque secondaire avec une application flatpak
 
-Si vous souhaitez ajouter un second disque dur ou SSD pour votre bibliothèque de jeux Steam, vous devez accorder à Steam l'accès à ce disque via une commande Flatpak :
-              
-```bash
-flatpak override --user --filesystem=/chemin/vers/votre/Bibliothèque/Steam com.valvesoftware.Steam
-```
-   
-Remplacez `/chemin/vers/votre/Bibliothèque/Steam` par le chemin réel vers votre dossier de bibliothèque Steam sur le second disque.
+[Vidéo de démonstration avec Flatseal](https://youtu.be/RKkGCj1ZVuI)
 
-Il faudra relancer Steam Flatpak pour qu'il puisse détecter le nouveau disque. Si il ne le détecte pas, c'est que vous vous êtes trompé dans la commande.
+Il faudra relancer l'application Flatpak pour qu'elle puisse détecter le nouveau disque.
 
 ---
 
