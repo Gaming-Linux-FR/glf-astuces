@@ -98,7 +98,14 @@ Si vous voulez également que votre grub mémorise le dernier OS lancé, remplac
 
 ## Accèder à un disque secondaire avec une application flatpak
 
-[Vidéo de démonstration avec Flatseal](https://youtu.be/RKkGCj1ZVuI)
+Le plus simple et d'utiliser Flatseal, on selectionne le flatapk on clique sur ![image](https://github.com/Gaming-Linux-FR/glf-astuces/assets/83916775/20e9afff-149d-4550-8279-189ae5dd1e48).
+
+
+Et on ajoute le chemin ou vous montez vos disques durs / SSD secondaires. /media est recommandé pour cet usage.
+
+![image](https://github.com/Gaming-Linux-FR/glf-astuces/assets/83916775/c71f8829-557b-4713-8397-a572add5051c)
+
+Il faut fermer Flatseal et redémarer le Flatpak concerné pour appliquer la modification.
 
 Il faudra relancer l'application Flatpak pour qu'elle puisse détecter le nouveau disque.
 
