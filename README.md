@@ -105,7 +105,7 @@ Et on ajoute le chemin ou vous montez vos disques durs / SSD secondaires. /media
 
 ![image](https://github.com/Gaming-Linux-FR/glf-astuces/assets/83916775/c71f8829-557b-4713-8397-a572add5051c)
 
-Il faut fermer Flatseal et redémarer le Flatpak concerné pour appliquer la modification.
+Il faut fermer Flatseal et redémarrer le Flatpak concerné pour appliquer la modification.
 
 Il faudra relancer l'application Flatpak pour qu'elle puisse détecter le nouveau disque.
 
