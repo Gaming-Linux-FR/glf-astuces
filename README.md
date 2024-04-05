@@ -98,6 +98,8 @@ Si vous voulez également que votre grub mémorise le dernier OS lancé, remplac
 
 ## Accèder à un disque secondaire avec une application flatpak
 
+Attention ! Certains Flatpak comme celui de Steam refusent de se lancer si on leur donne accès à tous les dossiers. Il faut donc uniquement donner à Steam Flatpak l'accès aux bibliothèques de jeu.
+
 Le plus simple et d'utiliser Flatseal, on selectionne le flatapk on clique sur ![image](https://github.com/Gaming-Linux-FR/glf-astuces/assets/83916775/20e9afff-149d-4550-8279-189ae5dd1e48).
 
 
