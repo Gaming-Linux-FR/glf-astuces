@@ -14,10 +14,8 @@
 Si vous rencontrez des problèmes de connexion avec un appareil Bluetooth, essayez la manipulation suivante :
 
 ```bash
-sudo nano /etc/bluetooth/main.conf
+sudo sed -i 's/#ControllerMode = dual/ControllerMode = bredr/' /etc/bluetooth/main.conf && sudo systemctl restart bluetooth
 ```
-
-Modifiez la ligne `#ControllerMode = dual` en `ControllerMode = bredr` puis redémarrez.
 
 ---
 
