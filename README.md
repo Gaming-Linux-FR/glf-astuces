@@ -27,7 +27,7 @@ Discord refusera de se lancer s'il détecte qu'une mise à jour est disponible, 
 Pour désactiver la vérification de mise à jour, ajoutez la ligne suivante à `~/.config/discord/settings.json` :
 
 ```bash
-sudo nano ~/.config/discord/settings.json
+nano ~/.config/discord/settings.json
 ```
 
 ```json
