@@ -5,6 +5,7 @@
 3. **[Configuration du Multiboot avec grub](#configuration-du-multiboot-avec-grub)**
 4. **[Accèder à un disque secondaire avec une application **FLATPAK**](#accèder-à-un-disque-secondaire-avec-une-application-flatpak)**
 5. **[Comment créer une clé bootable depuis Windows](#comment-créer-une-clé-bootable-depuis-windows)**
+6. **[Problème de performance avec CPU Intel](#problème-de-performance-avec-cpu-intel)**
 
 ---
 
@@ -114,3 +115,49 @@ Il faudra relancer l'application Flatpak pour qu'elle puisse détecter le nouvea
 ## Comment créer une clé bootable depuis Windows
 
 Tuto côté Emmabuntüs : https://emmabuntus.org/installer-emmabuntus-de5/#Avec_loutil_Etcher
+
+## Problème de performance avec CPU Intel
+
+### Diagnostic du problème :
+
+Si vous rencontrez des chutes importantes de FPS (images par seconde) pendant que vous jouez à un jeu, il est possible que le problème soit lié à la détection de verrouillage fractionné. Vous pouvez vérifier cela en suivant ces étapes :
+
+1. Lancez votre jeu comme d'habitude.
+2. Ouvrez un terminal et utilisez la commande suivante pour vérifier les messages système liés à la détection de verrouillage fractionné :
+   ```
+   sudo dmesg | grep split
+   ```
+3. Si vous voyez une sortie semblable à `[ 338.275160] x86/split lock detection: #AC: GoW.exe/6993 took a split_lock trap at address: 0x140b35229`, alors vous avez probablement le problème de détection de verrouillage fractionné.
+
+### Solutions au problème :
+
+#### Option (a) : Modification des paramètres de démarrage :
+
+Si vous préférez désactiver la détection de verrouillage fractionné au démarrage du système, suivez ces étapes :
+
+1. Ouvrez le fichier de configuration du chargeur de démarrage. Cela peut être `grub.conf` ou `grub.cfg` selon votre distribution Linux.
+2. Trouvez la ligne qui commence par `linux` et ajoutez `split_lock_detect=off` à la fin de la ligne.
+3. Enregistrez les modifications et redémarrez votre système.
+
+#### Option (b) : Désactivation temporaire à l'aide de sysctl :
+
+Si vous avez une version de noyau Linux égale ou supérieure à 6.2, vous pouvez désactiver temporairement la détection de verrouillage fractionné à l'aide de la commande `sysctl`. Suivez ces étapes :
+
+1. Avant de lancer le jeu, ouvrez un terminal.
+2. Utilisez la commande suivante pour désactiver temporairement la détection de verrouillage fractionné :
+   ```
+   sudo sysctl kernel.split_lock_mitigate=0
+   ```
+3. Vérifiez que la détection de verrouillage fractionné est désactivée en utilisant la commande :
+   ```
+   sysctl -a | grep split
+   ```
+
+### Résultats :
+
+Après avoir désactivé la détection de verrouillage fractionné, vous devriez remarquer une amélioration significative des performances de votre jeu. Si vous avez suivi ces étapes correctement, votre jeu devrait maintenant fonctionner de manière fluide et sans les chutes de FPS précédentes. Sur ma machine, dans par exemple dans God Of War je passe de 40 fps à 150fps.
+
+### Liens utiles :
+
+- [Discussion sur GitHub - Problème de détection de verrouillage fractionné](https://github.com/doitsujin/dxvk/issues/2938)
+- [Article sur Phoronix - Impact du verrouillage fractionné sur les jeux Linux](https://www.phoronix.com/news/Linux-Splitlock-Hurts-Gaming)
