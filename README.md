@@ -89,9 +89,21 @@ Si vous voulez également que votre grub mémorise le dernier OS lancé, remplac
 5. **Générer la Configuration de GRUB** :
 
    Utilisez la commande suivante pour générer la configuration de GRUB basée sur les résultats de `os-prober` :
+
+   Sur base Arch :
    ```bash
    sudo grub-mkconfig -o /boot/grub/grub.cfg
    ```
+
+  Sur base Fedora : 
+  ```bash
+  grub2-mkconfig -o /boot/grub2/grub.cfg
+   ```
+
+  Sur base Ubuntu : 
+  ```bash
+  sudo update-grub
+  ```
 
 ---
 
